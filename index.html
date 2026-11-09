@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerLens | Discover Your Future</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">Career<span>Lens.</span></a>
+
+        <nav>
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Find Jobs</a>
+    <a href="index.html#insights">Salary Insights</a>
+    <a href="salary.html">Salary Insights</a>
+    <a href="login.html">Login</a>
+</nav>
+
+        <a href="#careers" class="nav-btn">Get Started ↗</a>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="badge">✦ YOUR CAREER, IN FOCUS</div>
+
+                <h1>
+                    Your future starts<br>
+                    with the <span>right move.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Explore career opportunities, understand salary trends,
+                    and discover the skills that move your career forward.
+                </p>
+
+                <form class="search-box" id="jobSearch">
+                    <div class="search-field">
+                        <label for="role">WHAT ARE YOU LOOKING FOR?</label>
+                        <input id="role" type="text"
+                               placeholder="Job title or skill">
+                    </div>
+
+                    <div class="search-field">
+                        <label for="location">WHERE?</label>
+                        <input id="location" type="text"
+                               placeholder="City or location">
+                    </div>
+
+                    <button type="submit">Find Opportunities →</button>
+                </form>
+
+                <p class="popular">
+                    Popular searches:
+                    <a href="#careers">Data Analyst</a> ·
+                    <a href="#careers">UI/UX Designer</a> ·
+                    <a href="#careers">Developer</a>
+                </p>
+
+                <p id="searchMessage" role="status"></p>
+            </div>
+
+            <div class="hero-decoration">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="center-icon">✦</div>
+                <div class="floating-card card-top">
+                    <span class="status-dot"></span>
+                    Career possibilities
+                </div>
+                <div class="floating-card card-bottom">
+                    <span class="mini-icon">↗</span>
+                    Explore your potential
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+            <div class="stat">
+                <h2>Discover</h2>
+                <p>Career opportunities</p>
+            </div>
+            <div class="stat">
+                <h2>Compare</h2>
+                <p>Salary information</p>
+            </div>
+            <div class="stat">
+                <h2>Develop</h2>
+                <p>In-demand skills</p>
+            </div>
+            <div class="stat">
+                <h2>Grow</h2>
+                <p>Your career journey</p>
+            </div>
+        </section>
+
+        <!-- Career Categories -->
+        <section class="section" id="careers">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">FIND YOUR DIRECTION</p>
+                    <h2>Explore career paths.</h2>
+                </div>
+                <p class="heading-description">
+                    Start with a field that inspires you.
+                </p>
+            </div>
+
+            <div class="career-grid">
+                <article class="career-card">
+                    <div class="career-icon purple">▦</div>
+                    <h3>Data Analyst</h3>
+                    <p>Turn data into meaningful insights.</p>
+                    <div class="skills">
+                        <span>SQL</span><span>Python</span><span>Power BI</span>
+                    </div>
+                    <a href="#insights" class="card-link">Explore path ↗</a>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon green">⌘</div>
+                    <h3>Software Developer</h3>
+                    <p>Build applications and digital products.</p>
+                    <div class="skills">
+                        <span>Java</span><span>HTML</span><span>Python</span>
+                    </div>
+                    <a href="#insights" class="card-link">Explore path ↗</a>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon orange">✳</div>
+                    <h3>UI/UX Designer</h3>
+                    <p>Create useful and delightful experiences.</p>
+                    <div class="skills">
+                        <span>Figma</span><span>Research</span><span>Design</span>
+                    </div>
+                    <a href="#insights" class="card-link">Explore path ↗</a>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon blue">⌁</div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Build and maintain reliable systems.</p>
+                    <div class="skills">
+                        <span>Cloud</span><span>Linux</span><span>Docker</span>
+                    </div>
+                    <a href="#insights" class="card-link">Explore path ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Salary and Skills Insights -->
+        <section class="insights-section" id="insights">
+            <div class="insights-content">
+                <p class="eyebrow">CAREER INTELLIGENCE</p>
+                <h2>Make your next move<br>with confidence.</h2>
+                <p>
+                    A career is more than a job title. Understand salary
+                    expectations, explore skill requirements, and make
+                    informed decisions about your future.
+                </p>
+
+                <div class="feature-list">
+                    <div><span>✓</span> Explore salary comparisons</div>
+                    <div><span>✓</span> Identify valuable skills</div>
+                    <div><span>✓</span> Plan your career growth</div>
+                </div>
+
+                <a href="#careers" class="primary-btn">Explore Career Paths ↗</a>
+            </div>
+
+            <div class="insight-panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="panel-label">YOUR CAREER JOURNEY</span>
+                        <h3>Build your next chapter</h3>
+                    </div>
+                    <span class="panel-star">✦</span>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-number">01</div>
+                    <div>
+                        <h4>Discover</h4>
+                        <p>Find roles that match your interests.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-number">02</div>
+                    <div>
+                        <h4>Understand</h4>
+                        <p>Learn about skills and salary trends.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-number">03</div>
+                    <div>
+                        <h4>Take action</h4>
+                        <p>Move forward with a clear plan.</p>
+                    </div>
+                </div>
+                <p class="sample-note">CareerLens prototype · Sample content</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="logo">Career<span>Lens.</span></a>
+        <p>See your potential. Shape your future.</p>
+        <p class="copyright">© 2026 CareerLens · Student project prototype</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

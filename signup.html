@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerLens | Create Account</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <main class="auth-card">
+    <h1>CareerLens</h1>
+    <p class="subtitle">Create your account and start exploring careers.</p>
+
+    <form id="signupForm">
+      <label for="name">Full name</label>
+      <input id="name" type="text" autocomplete="name"
+             placeholder="Enter your name" required>
+
+      <label for="email">Email address</label>
+      <input id="email" type="email" autocomplete="email"
+             placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input id="password" type="password"
+             autocomplete="new-password"
+             placeholder="At least 8 characters"
+             minlength="8" required>
+
+      <button id="signupButton" type="submit">Create Account</button>
+      <p id="message" class="status" role="status"></p>
+    </form>
+
+    <p class="auth-link">
+      Already registered? <a href="login.html">Sign in</a>
+    </p>
+    <p class="auth-link"><a href="index.html">← Back to Home</a></p>
+  </main>
+
+  <script type="module">
+    import { auth } from "./firebase.js";
+    import {
+      createUserWithEmailAndPassword,
+      updateProfile
+    } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+    const form = document.getElementById("signupForm");
+    const message = document.getElementById("message");
+    const button = document.getElementById("signupButton");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!name) {
+        message.textContent = "Please enter your name.";
+        return;
+      }
+
+      button.disabled = true;
+      message.textContent = "Creating your account...";
+
+      try {
+        const credential = await createUserWithEmailAndPassword(
+          auth, email, password
+        );
+
+        await updateProfile(credential.user, {
+          displayName: name
+        });
+
+        window.location.href = "dashboard.html";
+      } catch (error) {
+        const errors = {
+          "auth/email-already-in-use": "This email is already registered. Please sign in.",
+          "auth/invalid-email": "Please enter a valid email address.",
+          "auth/weak-password": "Please choose a stronger password.",
+          "auth/network-request-failed": "Network error. Check your internet connection."
+        };
+
+        message.textContent =
+          errors[error.code] || "Could not create your account: " + error.message;
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

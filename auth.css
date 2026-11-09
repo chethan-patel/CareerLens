@@ -1,0 +1,119 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e3eed4, #edf5ff);
+  color: #24352a;
+}
+
+.auth-card {
+  width: min(92%, 420px);
+  margin: 55px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #00000012;
+}
+
+h1, h2 {
+  color: #375534;
+}
+
+h1, .subtitle {
+  text-align: center;
+}
+
+.subtitle {
+  color: #68756a;
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  margin: 16px 0 7px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd5ca;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button, .primary-link {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: #375534;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+form > button {
+  width: 100%;
+  margin-top: 22px;
+}
+
+button:hover, .primary-link:hover {
+  background: #263e25;
+}
+
+a {
+  color: #375534;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#message {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.dashboard {
+  width: min(94%, 1000px);
+  margin: 35px auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.panel {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  margin-top: 20px;
+  box-shadow: 0 5px 20px #00000008;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.status {
+  color: #375534;
+  min-height: 24px;
+}

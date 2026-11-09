@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerLens | Dashboard</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+  <main class="dashboard" id="dashboardContent" hidden>
+    <header class="topbar">
+      <div>
+        <h1>CareerLens</h1>
+        <p class="subtitle">Your career journey starts here.</p>
+      </div>
+      <button id="logoutButton" type="button">Logout</button>
+    </header>
+
+    <section class="panel">
+      <h2 id="welcome">Welcome!</h2>
+      <p>You are signed in successfully.</p>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>Account status:</strong> Authenticated</p>
+      <p id="message" class="status" role="status"></p>
+    </section>
+
+    <section class="cards">
+      <article class="panel">
+        <h2>Find Jobs</h2>
+        <p>Explore job opportunities that match your skills.</p>
+        <a class="primary-link" href="jobs.html">Explore Jobs</a>
+      </article>
+
+      <article class="panel">
+        <h2>Salary Insights</h2>
+        <p>Explore salary information and career trends.</p>
+        <a class="primary-link" href="salary.html">View Salaries</a>
+      </article>
+
+      <article class="panel">
+        <h2>Your Profile</h2>
+        <p id="profileName">Your account is ready.</p>
+      </article>
+    </section>
+  </main>
+
+  <p id="loadingMessage" style="text-align:center; margin:50px;">
+    Checking your account...
+  </p>
+
+  <script type="module">
+    import { auth } from "./firebase.js";
+
+    import {
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+    const dashboard = document.getElementById("dashboardContent");
+    const loading = document.getElementById("loadingMessage");
+    const welcome = document.getElementById("welcome");
+    const email = document.getElementById("userEmail");
+    const profileName = document.getElementById("profileName");
+    const logoutButton = document.getElementById("logoutButton");
+    const message = document.getElementById("message");
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.replace("./login.html");
+        return;
+      }
+
+      const displayName = user.displayName || user.email || "User";
+
+      welcome.textContent = `Welcome, ${displayName}!`;
+      email.textContent = user.email || "No email available";
+      profileName.textContent = displayName;
+
+      loading.hidden = true;
+      dashboard.hidden = false;
+    }, (error) => {
+      console.error("Authentication error:", error);
+      loading.textContent =
+        "Unable to check your account. Please refresh and try again.";
+    });
+
+    logoutButton.addEventListener("click", async () => {
+      logoutButton.disabled = true;
+      message.textContent = "Logging out...";
+
+      try {
+        await signOut(auth);
+        window.location.replace("./login.html");
+      } catch (error) {
+        console.error("Logout error:", error);
+        message.textContent = "Logout failed. Please try again.";
+        logoutButton.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

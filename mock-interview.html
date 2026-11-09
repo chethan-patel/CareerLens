@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Interview | CareerLens</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .mi-page { max-width: 900px; margin: 40px auto; padding: 20px; }
+    .mi-hero { background: #375534; color: white; padding: 32px; border-radius: 18px; }
+    .mi-panel { background: white; color: #243321; padding: 25px; border-radius: 16px; margin-top: 22px; box-shadow: 0 5px 22px #00000012; }
+    .mi-select, .mi-option { width: 100%; padding: 13px; margin-top: 9px; border: 1px solid #ccd7c7; border-radius: 9px; background: white; color: #243321; }
+    .mi-btn { background: #375534; color: white; padding: 13px 22px; border: 0; border-radius: 9px; cursor: pointer; margin-top: 18px; font-weight: 600; }
+    .mi-btn:disabled { opacity: .5; cursor: not-allowed; }
+    .mi-question { border-bottom: 1px solid #e5eae2; padding: 20px 0; }
+    .mi-option { display: block; cursor: pointer; text-align: left; }
+    .mi-option input { margin-right: 10px; }
+    .mi-progress { height: 9px; background: #e6eee2; border-radius: 20px; overflow: hidden; margin: 15px 0; }
+    .mi-progress span { display: block; height: 100%; background: #6c9b5d; width: 0; }
+    .mi-muted { color: #647260; }
+    .mi-hidden { display: none; }
+    @media(max-width:600px) { .mi-page { margin: 15px auto; padding: 12px; } .mi-hero { padding: 23px; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="jobs.html">Home</a>
+    <a href="jobs.html">Find Jobs</a>
+    <a href="salary.html">Salary Insights</a>
+    <a href="saved-jobs.html">Saved Jobs</a>
+    <a href="mock-interview.html">Mock Interview</a>
+  </nav>
+
+  <main class="mi-page">
+    <section class="mi-hero">
+      <h1>Practice. Improve. Get Hired.</h1>
+      <p>Take a mock interview, understand your skill level, and discover jobs that match your abilities.</p>
+    </section>
+
+    <section class="mi-panel" id="setupPanel">
+      <h2>Choose your interview</h2>
+      <p class="mi-muted">Select the role you want to prepare for.</p>
+
+      <label for="roleSelect"><strong>Interview role</strong></label>
+      <select id="roleSelect" class="mi-select">
+        <option value="uiux">UI/UX Designer</option>
+        <option value="frontend">Frontend Developer</option>
+        <option value="data">Data Analyst</option>
+        <option value="python">Python Developer</option>
+      </select>
+
+      <p class="mi-muted">Each interview contains 6 questions. Choose the best answer for each question.</p>
+      <button class="mi-btn" id="startBtn">Start Mock Interview</button>
+      <p id="setupMessage" class="mi-muted"></p>
+    </section>
+
+    <section class="mi-panel mi-hidden" id="quizPanel">
+      <div>
+        <h2 id="quizTitle">Mock Interview</h2>
+        <p id="questionCount" class="mi-muted"></p>
+        <div class="mi-progress"><span id="progressBar"></span></div>
+      </div>
+
+      <form id="quizForm">
+        <div id="questionsContainer"></div>
+        <button class="mi-btn" type="submit" id="submitBtn">Submit Interview</button>
+      </form>
+      <p id="quizMessage" class="mi-muted"></p>
+    </section>
+  </main>
+
+  <script type="module" src="mock-interview.js"></script>
+</body>
+</html>

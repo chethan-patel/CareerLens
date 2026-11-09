@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerLens | Salary Insights</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="salary.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="salary.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <a class="brand" href="jobs.html" aria-label="CareerLens home">
+        <span class="brand-mark">C</span>
+        <span>CareerLens</span>
+      </a>
+
+      <p class="nav-label">WORKSPACE</p>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="jobs.html">
+          <span class="nav-icon">⌕</span> Find Jobs
+        </a>
+
+        <a class="nav-link active" href="salary.html">
+          <span class="nav-icon">◥</span> Salary Insights
+        </a>
+
+        <a class="nav-link" href="saved-jobs.html">
+          <span class="nav-icon">♡</span> Saved Jobs
+        </a>
+
+        <a class="nav-link" href="mock-interview.html">
+          Mock Interview
+        </a>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="note-icon">✦</span>
+        <h3>Make your next move smarter.</h3>
+        <p>Use salary and skill trends to guide your career plan.</p>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        Public dataset · Academic analysis
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CAREER ANALYTICS</p>
+          <h1>Salary Insights</h1>
+          <p class="page-subtitle">
+            Understand salary trends and discover the skills employers need.
+          </p>
+        </div>
+
+        <a class="back-link" href="jobs.html">← Back to jobs</a>
+      </header>
+
+      <section class="notice" role="note">
+        <span class="notice-icon">ⓘ</span>
+        <div>
+          <strong>CareerLens dashboard</strong>
+          <p>
+            This dashboard presents insights from 100,000 records
+            in the downloaded India Tech Career Intelligence 2026 dataset.
+            Salary values are in INR; the salary period is not specified.
+          </p>
+        </div>
+      </section>
+
+      <section class="filter-row" aria-label="Dashboard filters">
+        <div class="filter-heading">
+          <span class="filter-symbol">⚷</span>
+          <div>
+            <strong>Explore the market</strong>
+            <small>Choose a location to update the dashboard</small>
+          </div>
+        </div>
+
+        <label class="select-wrap" for="locationFilter">
+          <span>Location</span>
+          <select id="locationFilter">
+            <option value="All">All locations</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="metric-grid" aria-label="Salary summary">
+
+        <article class="metric-card">
+          <div class="metric-top">
+            <span>Average salary</span>
+            <span class="metric-icon green">₹</span>
+          </div>
+          <p class="metric-value" id="averageSalary">₹0</p>
+          <p class="metric-foot">Across all cities</p>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-top">
+            <span>Highest average salary</span>
+            <span class="metric-icon purple">↗</span>
+          </div>
+          <p class="metric-value" id="highestSalary">₹0</p>
+          <p class="metric-foot">Highest average among listed roles</p>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-top">
+            <span>Roles analysed</span>
+            <span class="metric-icon blue">▦</span>
+          </div>
+          <p class="metric-value" id="roleCount">0</p>
+          <p class="metric-foot">Across all job records</p>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-top">
+            <span>Skills tracked</span>
+            <span class="metric-icon orange">⌘</span>
+          </div>
+          <p class="metric-value" id="skillCount">0</p>
+          <p class="metric-foot">Top skills displayed below</p>
+        </article>
+
+      </section>
+
+      <section class="charts-grid">
+
+        <article class="panel salary-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">COMPENSATION</p>
+              <h2>Salary by job role</h2>
+              <p>Average salary in INR for the top 10 roles</p>
+            </div>
+            <span class="chart-tag">INR</span>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas
+              id="salaryChart"
+              aria-label="Bar chart showing salary by job role">
+            </canvas>
+          </div>
+        </article>
+
+        <article class="panel skills-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">IN-DEMAND SKILLS</p>
+              <h2>What employers want</h2>
+              <p>Most frequently mentioned skills in job postings</p>
+            </div>
+          </div>
+
+          <div class="chart-wrap skills-chart-wrap">
+            <canvas
+              id="skillsChart"
+              aria-label="Doughnut chart showing skill demand">
+            </canvas>
+          </div>
+
+          <div id="skillsLegend" class="skills-legend"></div>
+        </article>
+
+      </section>
+
+      <section class="panel table-panel">
+
+        <div class="panel-heading table-heading">
+          <div>
+            <p class="panel-kicker">ROLE BREAKDOWN</p>
+            <h2>Salary overview</h2>
+            <p>Top 10 roles ranked by average salary in the dataset.</p>
+          </div>
+
+          <span class="table-count" id="tableCount">0 roles</span>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>JOB ROLE</th>
+                <th>LOCATION</th>
+                <th>SKILLS</th>
+                <th>AVERAGE SALARY</th>
+              </tr>
+            </thead>
+
+            <tbody id="salaryTableBody"></tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <footer class="page-footer">
+        CareerLens · Salary Insights
+        <span>Public dataset · Academic analysis</span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

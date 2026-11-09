@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Results | CareerLens</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ir-page { max-width: 1000px; margin: 35px auto; padding: 18px; color: #243321; }
+    .ir-hero { background: #375534; color: white; padding: 30px; border-radius: 18px; }
+    .ir-card { background: white; padding: 23px; border-radius: 15px; margin-top: 20px; box-shadow: 0 5px 22px #00000012; }
+    .ir-score { font-size: 48px; font-weight: 800; color: #375534; }
+    .ir-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 15px; }
+    .ir-skill { padding: 14px; background: #f3f7f0; border-radius: 10px; margin: 10px 0; }
+    .ir-track { height: 9px; background: #dce7d7; border-radius: 20px; overflow: hidden; margin-top: 8px; }
+    .ir-fill { height: 100%; background: #56834b; }
+    .ir-job { border: 1px solid #e1e9dd; padding: 17px; border-radius: 12px; margin: 12px 0; }
+    .ir-btn { display: inline-block; background: #375534; color: white; padding: 11px 18px; border-radius: 8px; text-decoration: none; margin: 8px 8px 0 0; }
+    .ir-muted { color: #657361; }
+    .ir-loading { padding: 30px; text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="jobs.html">Home</a>
+    <a href="jobs.html">Find Jobs</a>
+    <a href="salary.html">Salary Insights</a>
+    <a href="saved-jobs.html">Saved Jobs</a>
+    <a href="mock-interview.html">Mock Interview</a>
+  </nav>
+
+  <main class="ir-page">
+    <section class="ir-hero">
+      <h1>Your Interview Assessment</h1>
+      <p>Understand your skills and explore suitable career opportunities.</p>
+    </section>
+
+    <div id="loadingMessage" class="ir-loading">Loading your assessment...</div>
+
+    <div id="resultsContent" hidden>
+      <section class="ir-card">
+        <div class="ir-grid">
+          <div>
+            <p class="ir-muted">Overall score</p>
+            <div class="ir-score" id="overallScore">--%</div>
+          </div>
+          <div>
+            <p class="ir-muted">Skill level</p>
+            <h2 id="skillLevel">--</h2>
+          </div>
+          <div>
+            <p class="ir-muted">Correct answers</p>
+            <h2 id="correctAnswers">--</h2>
+          </div>
+        </div>
+        <h2 id="roleTitle"></h2>
+        <p id="resultMessage" class="ir-muted"></p>
+      </section>
+
+      <section class="ir-card">
+        <h2>Your skill breakdown</h2>
+        <div id="skillBreakdown"></div>
+      </section>
+
+      <section class="ir-card">
+        <h2>Your strengths</h2>
+        <p id="strengths"></p>
+        <h2>Skills to improve</h2>
+        <p id="improvements"></p>
+      </section>
+
+      <section class="ir-card">
+        <h2>Recommended jobs for you</h2>
+        <p class="ir-muted">These suggestions are based on your assessed skills and the sample jobs currently configured in CareerLens.</p>
+        <div id="jobRecommendations"></div>
+      </section>
+
+      <section class="ir-card">
+        <a href="mock-interview.html" class="ir-btn">Take Another Interview</a>
+        <a href="jobs.html" class="ir-btn">Explore All Jobs</a>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="interview-results.js"></script>
+</body>
+</html>

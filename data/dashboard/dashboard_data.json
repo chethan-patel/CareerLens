@@ -1,0 +1,186 @@
+{
+    "summary": {
+        "total_jobs": 100000,
+        "total_job_roles": 24,
+        "total_cities": 8,
+        "average_salary": 849949.31
+    },
+    "top_paying_roles": [
+        {
+            "job_role": "Data Scientist",
+            "average_salary": 852942.37
+        },
+        {
+            "job_role": "Computer Vision Engineer",
+            "average_salary": 852245.95
+        },
+        {
+            "job_role": "DevOps Intern",
+            "average_salary": 852225.1
+        },
+        {
+            "job_role": "Machine Learning Engineer",
+            "average_salary": 851622.76
+        },
+        {
+            "job_role": "React Developer",
+            "average_salary": 851432.03
+        },
+        {
+            "job_role": "Cloud Infrastructure Intern",
+            "average_salary": 851102.84
+        },
+        {
+            "job_role": "Full Stack Developer",
+            "average_salary": 851021.3
+        },
+        {
+            "job_role": "Azure Cloud Engineer",
+            "average_salary": 850806.11
+        },
+        {
+            "job_role": "Cybersecurity Analyst",
+            "average_salary": 850724.74
+        },
+        {
+            "job_role": "Data Engineer",
+            "average_salary": 849971.87
+        }
+    ],
+    "salary_by_city": [
+        {
+            "city": "Gurgaon",
+            "average_salary": 852275.33
+        },
+        {
+            "city": "Hyderabad",
+            "average_salary": 852136.69
+        },
+        {
+            "city": "Chennai",
+            "average_salary": 850362.42
+        },
+        {
+            "city": "Bangalore",
+            "average_salary": 850241.39
+        },
+        {
+            "city": "Noida",
+            "average_salary": 849700.05
+        },
+        {
+            "city": "Mumbai",
+            "average_salary": 849584.85
+        },
+        {
+            "city": "Pune",
+            "average_salary": 848379.38
+        },
+        {
+            "city": "Delhi NCR",
+            "average_salary": 846918.04
+        }
+    ],
+    "salary_by_experience": [
+        {
+            "experience_level": "Freshers / Entry Level",
+            "average_salary": 850379.06
+        },
+        {
+            "experience_level": "Mid-Senior Level",
+            "average_salary": 849661.27
+        }
+    ],
+    "salary_by_year": [
+        {
+            "year": 2026,
+            "average_salary": 849949.31
+        }
+    ],
+    "top_required_skills": [
+        {
+            "skill": "Python",
+            "count": 33212
+        },
+        {
+            "skill": "Linux",
+            "count": 33134
+        },
+        {
+            "skill": "HTML",
+            "count": 16872
+        },
+        {
+            "skill": "CSS",
+            "count": 16872
+        },
+        {
+            "skill": "JavaScript",
+            "count": 16872
+        },
+        {
+            "skill": "React",
+            "count": 16872
+        },
+        {
+            "skill": "Node.js",
+            "count": 16872
+        },
+        {
+            "skill": "Express",
+            "count": 16872
+        },
+        {
+            "skill": "MongoDB",
+            "count": 16872
+        },
+        {
+            "skill": "Tailwind CSS",
+            "count": 16872
+        }
+    ],
+    "job_demand_by_role": [
+        {
+            "job_role": "Cloud Infrastructure Intern",
+            "job_count": 5626
+        },
+        {
+            "job_role": "Azure Cloud Engineer",
+            "job_count": 5596
+        },
+        {
+            "job_role": "AWS Solutions Architect",
+            "job_count": 5560
+        },
+        {
+            "job_role": "Platform Engineer",
+            "job_count": 4272
+        },
+        {
+            "job_role": "LLM Developer",
+            "job_count": 4251
+        },
+        {
+            "job_role": "Site Reliability Engineer",
+            "job_count": 4226
+        },
+        {
+            "job_role": "AI Research Intern",
+            "job_count": 4204
+        },
+        {
+            "job_role": "Business Analyst",
+            "job_count": 4191
+        },
+        {
+            "job_role": "Machine Learning Engineer",
+            "job_count": 4178
+        },
+        {
+            "job_role": "Computer Vision Engineer",
+            "job_count": 4154
+        }
+    ],
+    "salary_currency": "INR",
+    "salary_unit": "Not specified in dataset"
+}
