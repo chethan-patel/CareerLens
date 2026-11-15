@@ -17,7 +17,7 @@ import { onAuthStateChanged } from
 // CONFIGURATION
 // ======================================
 
-const API_URL = "http://127.0.0.1:5000/api/jobs";
+const API_URL = "https://careerlens-1-ymg7.onrender.com/api/jobs";
 const PAGE_LIMIT = 50;
 
 

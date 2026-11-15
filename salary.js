@@ -1,5 +1,5 @@
 // CareerLens Salary Insights - Public dataset
-const DATA_URL = "http://127.0.0.1:5000/api/salary";
+const DATA_URL = "https://careerlens-1-ymg7.onrender.com/api/salary";
 
 const SKILL_PALETTE = [
   "#39764d", "#76a983", "#aacbb0", "#8a78c7",
